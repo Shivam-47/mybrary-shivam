@@ -1,0 +1,46 @@
+npm init --y (yes to all)
+npm i express-ejs-layouts (a separate package for template layouts)
+npm i --save-dev (saves as dev dependency)
+
+app.set(views,$dir) // refers to views folder from where we get views
+app.set(layout,$dir) // refers to layout folder so we dont have 
+		     //to rewrite basic title and other text of html
+app.use(express.static('public')); // public files like stylesheet, js, images etc.
+
+app.listen(process.env.PORT || 3000) //3000 for local process.env.PORT for deployment
+				     // where the host will allocate the port
+
+// Generally all the routes are kept in server.js but for large apps it gets very
+// complicated so we will create a separate folder for routes which acts as a 
+// Controller of MVC routes/controller are same thing
+// Models folder will have all the DB models.
+
+// require the router as module 
+// './' means relative to our current location of dir. (aka relative path).
+
+app.use('/',indexRouter) // for all routes going via root to use indexRouter// 
+
+//layouts will extract info from views ejs files and place them in the ejs sections of code
+// this reduces our work of writing the basic layout code again and again
+
+npm i mongoose
+// install mongoDB
+
+mongoose.connect(process.env.DATABASE_URL)  // when hosting will adjust automatically similiar to PORT #
+
+{useNewUrlParser: true}   // as latest mongoDB doesn't work with these libraries
+
+// we need to set PROCESS_ENV_VARIABLES before running the connection test for DB and we
+// do that using dotenv library by installing that module
+
+
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config()
+}
+
+// !== production  we don't want to load this environment variable unless we are in development mode
+
+// .gitignore to put all files which we don't want to put in git ie PROCESS.ENV files and Node Modules files
+// as they are very large but we have to keep package json so that anyone can download and use
+// the app by simpling running npm init
+
