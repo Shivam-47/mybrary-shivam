@@ -53,5 +53,5 @@ $ git push heroku HEAD:master
 // settings/env-variable/
 // map the env-variable to this string
 // make sure to add the password in the string
-// save and refresh
+// save and refresh //
 
