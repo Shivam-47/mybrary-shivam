@@ -44,3 +44,14 @@ if(process.env.NODE_ENV !== 'production'){
 // as they are very large but we have to keep package json so that anyone can download and use
 // the app by simpling running npm init
 
+// for heroku remote deploy if normal push command doesn't work try
+$ git push heroku HEAD:master
+// after this create a free cluster in MongoAtlas
+// set up the user name set up password (your own or secured generated)
+// select access IP
+// select connection mode and copy string and map it to ENV variable in settings of heroku
+// settings/env-variable/
+// map the env-variable to this string
+// make sure to add the password in the string
+// save and refresh
+
