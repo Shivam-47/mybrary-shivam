@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const bodyParser =  require('body-parser');
 const Author = require('../models/author')
 //const Book = require('../models/book')
 
 //var bodyParser=require('body-parser');
+const bodyParser =  require('body-parser');
 const urlEncoded = bodyParser.urlencoded({extended:false});
 
 
