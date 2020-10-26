@@ -17,7 +17,7 @@ app.use(expressLayouts);
 app.use(express.static('public'));
 app.use('/',indexRouter);
 app.use('/authors',authorRouter);
-app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 
 const mongoose = require('mongoose')
